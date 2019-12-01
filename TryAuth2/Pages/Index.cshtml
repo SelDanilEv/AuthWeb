@@ -1,0 +1,29 @@
+﻿@page "{handler?}"
+
+@model TryAuth2.Pages.IndexModel
+
+
+
+<div style="margin-left:40%;margin-top:10%">
+    <form method="post">
+        <label style="color:blueviolet"><h2>Login Form</h2></label>
+        <table>
+            <tr>
+                <td><input type="text" placeholder="Username" asp-for="@Model.Username" /></td>
+                <td>
+                    @if (Model.Message != null)
+                    {
+                        @Model.Message
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td><input type="password" placeholder="Password" asp-for="@Model.Password" /></td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" asp-page-handler="LogIn" value="Login" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
